@@ -112,5 +112,9 @@ for i in range(0,4):
     plt.imshow(model.predict(data[0])[0].reshape(144,256),cmap='jet')
     fig.add_subplot(4, 3, i * 3 + 3)
     plt.imshow(data[1][0].reshape(144,256),cmap='jet')
+    for j in range(i+2):
+        data = next(validation_generator)
 
+
+fig.savefig('validation2.png')
 plt.show()
